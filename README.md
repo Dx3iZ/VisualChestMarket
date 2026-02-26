@@ -1,6 +1,7 @@
 # VisualChestMarket
 VisualChestMarket, oyuncularınızın sandıklarını kullanarak kolayca market oluşturmasını sağlayan, görsel açıdan zengin ve kullanımı basit bir Spigot/Paper eklentisidir.
 
+![Banner](https://github.com/Dx3iZ/VisualChestMarket/blob/main/2026-02-26_21.11.34.png)
 # 📦 VisualChestMarket - Modern ve Görsel Sandık Marketi
 
 VisualChestMarket, oyuncularınızın sandıklarını kullanarak kolayca market oluşturmasını sağlayan, görsel açıdan zengin ve kullanımı basit bir Spigot/Paper eklentisidir. Hologramlar, zırh askıları ve kullanıcı dostu arayüzü ile sunucunuzun ekonomisini canlandırın!
@@ -78,3 +79,7 @@ Bu eklentinin çalışması için sunucunuzda aşağıdaki eklentilerin yüklü 
 | `/vcm delete` | Baktığınız marketi siler. | - |
 | `/vcm reload` | Config ve marketleri yeniler. | `vcm.admin` |
 | `/vcm transferall <eski> <yeni>` | Başkasının marketlerini devreder. | `vcm.admin` |
+
+![Banner](https://github.com/Dx3iZ/VisualChestMarket/blob/main/Screenshot_1.png)
+![Banner](https://github.com/Dx3iZ/VisualChestMarket/blob/main/Screenshot_2.png)
+
