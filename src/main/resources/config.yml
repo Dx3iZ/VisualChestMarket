@@ -1,0 +1,153 @@
+database:
+  type: sqlite # or mysql
+  host: localhost
+  port: 3306
+  database: minecraft
+  username: root
+  password: ""
+
+# Genel ayarlar
+date-format: "dd/MM/yyyy HH:mm"
+chunk-limit: 16
+shop-limit-per-player: 30 # Oyuncu başına market limiti (-1 = limitsiz)
+max-members-per-shop: 5 # Bir markete eklenebilecek maksimum üye sayısı
+money-type: "TL"
+
+# Ekonomi Ayarları
+price-format: "#,###.##" # Fiyatların görünüm formatı (örn: 1,000,000.50)
+tax-rate: 5.0 # Yüzde kaç komisyon alınacak? (0.0 = kapalı)
+
+# Görünüm Ayarları
+default-display-mode: "ARMORSTAND" # HOLOGRAM, ARMORSTAND, NONE
+display-mode-names:
+  ARMORSTAND: "Zırh Askısı"
+  HOLOGRAM: "Hologram"
+  NONE: "Görünüm Yok"
+
+# Tabela Ayarları
+sign-lines:
+  line1: "<green><bold>%owner_name%"
+  line2: "%status_color%%mode% <dark_gray>(%stock%)"
+  line3: "<gold>%price% %money_type%"
+  line4: "<gray>%item_name%"
+
+# Yasaklı Eşyalar (Blacklist)
+blacklist:
+  - "BEDROCK"
+  - "BARRIER"
+  - "COMMAND_BLOCK"
+  - "STRUCTURE_VOID"
+
+messages:
+  prefix: "<gradient:#ffaa00:#ff5500><bold>MARKET</bold></gradient> <dark_gray>»</dark_gray> "
+  reload-success: "<green>Yapılandırma dosyası başarıyla yenilendi!"
+  only-players: "<red>Bu komutu sadece oyuncular kullanabilir."
+  no-permission: "<red>Bunu yapmak için yetkiniz yok."
+  invalid-shop-id: "<red>Geçersiz market ID'si."
+  shop-not-found: "<red>Market bulunamadı."
+  not-owner: "<red>Bu marketin sahibi değilsiniz."
+  player-not-found: "<red>Oyuncu bulunamadı veya çevrimdışı."
+  look-at-shop: "<red>Bir markete bakmalısınız."
+  blacklisted-item: "<red>Bu eşyanın satışı yasaklanmıştır."
+  no-build-permission: "<red>Burada market oluşturmak için izniniz yok."
+  block-in-front: "<red>Sandığın önünde blok var, market oluşturulamaz."
+  player-shop-limit: "<red>Daha fazla market oluşturamazsınız! (Limit: %limit%)"
+  
+  # Market Oluşturma
+  shop-created: "<green>Market başarıyla oluşturuldu! <gray>(Fiyat: <yellow>%price% %money-type%<gray>)"
+  chest-not-empty: "<red>Market oluşturmak için sandığın boş olması gerekir."
+  invalid-item: "<red>Elinizde geçerli bir eşya yok."
+  invalid-price: "<red>Geçersiz fiyat girdiniz."
+  chunk-limit-message: "<red>Bu chunk'ta daha fazla market oluşturulamaz! (Limit: %limit%)"
+  product-price: "<yellow>Ürünün bir adetinin fiyatını sohbete yazın:"
+  air-hand: "<red>İlk önce satılacak ürünü elinize alın."
+  invalid-amount: "<red>Geçersiz miktar girdiniz."
+
+  # Market Etkileşimi
+  out-of-stock: "<red>Market stoğu tükenmiş."
+  shop-full: "<red>Market sandığı dolu, satış yapılamaz."
+  insufficient-funds: "<red>Yetersiz bakiye! Gerekli: <yellow>%amount% %money-type%"
+  buy-success: "<green>Başarıyla satın aldınız: <white>%amount%x %item% <gray>(<yellow>-%price% %money-type%<gray>)"
+  sell-success: "<green>Başarıyla sattınız: <white>%amount%x %item% <gray>(<yellow>+%price% %money-type%<gray>)"
+  proccess-market: "<yellow>İşlem yapmak istediğiniz miktarı sohbete yazın. <gray>(Tümünü almak/satmak için 'all' yazın)"
+  cancel: "<red>İşlem iptal edildi."
+  not-length: "<red>Şuanda stokda yeterli miktarda ürün bulunmamakta."
+  not-have-items: "<red>Satmak istediğiniz üründen üzerinizde bulunmamakta."
+  dont-have-money-item: "<red>Üzerinizde gerekli miktarda para veya ürün bulunmamakta."
+  dont-have-money: "<red>Yeterli paranız yok. Gerekli: <yellow>%total_price% %money_type%"
+  owner-not-money: "<red>Market sahibinin yeterli miktarda parası bulunmamakta."
+  customer-sign: "<yellow>İşlem gerçekleştirmek için tabelaya tıklayın."
+  full-inventory: "<red>Envanterinizde yeterli boşluk yok."
+  tax-info: "<gray>(Vergi: <red>-%tax% %money-type%<gray>)"
+  
+  # Market Modları
+  shop-mode-sell: "SATIŞ"
+  shop-mode-buy: "ALIŞ"
+  
+  # Market Sahibi Bildirimleri
+  owner-notification-sold: "<green><bold>SATIŞ:</bold> <yellow>%player%</yellow> marketinizden <white>%amount%x %item%</white> satın aldı. <green>+%price% %money-type% kazandınız.</green>"
+  owner-notification-bought: "<blue><bold>ALIŞ:</bold> <yellow>%player%</yellow> marketinize <white>%amount%x %item%</white> sattı. <red>-%price% %money-type% ödediniz.</red>"
+
+  # Menü ve Ayarlar
+  price-update-prompt: "<yellow>Yeni fiyatı sohbete yazın <gray>(İptal için 'iptal' yazın)"
+  price-updated: "<green>Fiyat güncellendi: <yellow>%price% %money-type%"
+  mode-changed: "<green>Market modu değiştirildi: <yellow>%mode%"
+  display-changed: "<green>Görünüm modu değiştirildi: <yellow>%mode%"
+  shop-deleted: "<green>Market başarıyla kaldırıldı."
+  delete-confirm: >
+    <red>Marketi silmek istediğinize emin misiniz? Bu işlem geri alınamaz.</red>
+    <click:run_command:'/vcm confirmdelete'><hover:show_text:'<green>Onaylamak için tıkla.'><green><bold>[ONAYLA]</bold></green></click> <click:run_command:'/vcm canceldelete'><hover:show_text:'<red>İptal etmek için tıkla.'><red><bold>[İPTAL]</bold></red></click>
+  delete-cancelled: "<yellow>Market silme işlemi iptal edildi."
+  no-delete-pending: "<red>Onay bekleyen bir market silme işleminiz yok."
+  
+  # Transfer İşlemleri
+  transfer-success: "<green>Market başarıyla <yellow>%player%</yellow> adlı oyuncuya devredildi."
+  transfer-all-success: "<green><yellow>%old_owner%</yellow> adlı oyuncunun tüm marketleri (<aqua>%count% adet</aqua>) <yellow>%new_owner%</yellow> adlı oyuncuya devredildi."
+  
+  # Üye Yönetimi
+  member-added: "<green>%player% oyuncusu markete <yellow>%role%</yellow> rolüyle eklendi."
+  member-removed: "<red>%player% oyuncusu marketten kaldırıldı."
+  member-role-updated: "<green>%player% oyuncusunun rolü <yellow>%role%</yellow> olarak güncellendi."
+  already-member: "<red>Bu oyuncu zaten marketin bir üyesi."
+  not-a-member: "<red>Bu oyuncu marketin bir üyesi değil."
+  invalid-role: "<red>Geçersiz rol. Kullanılabilir roller: MANAGER, HELPER"
+  member-limit-reached: "<red>Bu markete daha fazla üye ekleyemezsiniz. (Limit: %limit%)"
+  
+  # Yasaklama Sistemi
+  player-banned: "<red>%player% oyuncusu marketten yasaklandı."
+  player-unbanned: "<green>%player% oyuncusunun yasağı kaldırıldı."
+  player-is-banned: "<red>Bu marketten yasaklısınız! Sebep: <yellow>%reason%"
+  already-banned: "<red>Bu oyuncu zaten yasaklı."
+  not-banned: "<red>Bu oyuncu yasaklı değil."
+  ban-reason-prompt: "<yellow>Yasaklama sebebini sohbete yazın (İsteğe bağlı, boş bırakmak için 'yok' yazın):"
+  search-prompt: "<yellow>Aramak istediğiniz oyuncu adını yazın:"
+  
+  # Blok Koruma Mesajları
+  break-not-owner: "<red>Bu market size ait değil, kıramazsınız."
+  shop-deleted-by-break: "<green>Marketiniz başarıyla kaldırıldı."
+  double-chest-not-allowed: "<red>Başkasının marketini çift sandık yapamazsınız."
+  market-chest: "<red>Bu bir market sandığı, silmek için <bold>/vcm delete</bold> komutunu kullanın."
+  own-market: "<gray>Market sahibi: <gold>%owner_name%"
+
+  # GUI Ayarları
+  gui-title-history: "<dark_gray>İşlem Geçmişi"
+  gui-title-members: "<dark_gray>Market Üyeleri"
+  gui-title-bans: "<dark_gray>Yasaklı Oyuncular"
+  
+  # GUI Butonları
+  gui-next-page: "<green>Sonraki Sayfa »"
+  gui-prev-page: "<green>« Önceki Sayfa"
+  gui-filter: "<yellow>Filtrele"
+  gui-search: "<yellow>Ara"
+  gui-back: "<red>Geri Dön"
+
+  # History GUI
+  history-empty: "<red>Henüz işlem yok."
+  history-item-name: "<gold>%player%"
+  history-entry: "<gray>İşlem: %type%<newline><gray>Miktar: <white>%amount%<newline><gray>Toplam Fiyat: <yellow>%price% TL<newline><dark_gray>%date%"
+  history-type-buy: "<red>Satın Alım"
+  history-type-sell: "<green>Satış"
+  
+  # Ban List GUI
+  ban-item-name: "<red>%player%"
+  ban-item-lore: "<gray>Sebep: <yellow>%reason%<newline><gray>Tarih: <yellow>%date%<newline><newline><green>Sol Tık: Yasağı Kaldır"

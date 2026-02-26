@@ -1,0 +1,20 @@
+name: VisualChestMarket
+version: 1.0.0
+main: org.dxeiz.visualchestmarket.VisualChestMarket
+api-version: 1.21
+authors: [DxeiZ]
+depend: [Vault, DecentHolograms]
+softdepend: [PlaceholderAPI]
+commands:
+  market:
+    description: Main market command
+    usage: /market <menu|setprice|togglemode|toggledisplay|history|delete|confirmdelete|reload>
+    aliases: [vcm]
+    permission: vcm.use
+    permission-message: You don't have permission.
+
+permissions:
+  vcm.use:
+    default: true
+  vcm.admin:
+    default: op
